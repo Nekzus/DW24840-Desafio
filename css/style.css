@@ -1,0 +1,290 @@
+/**** GLOBAL SETTINGS ****/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**** BODY ****/
+body {
+  background-color: rgb(104, 102, 102);
+  color: white;
+}
+
+/**** HEADER ****/
+header {
+  background-color: rgb(39, 38, 38);
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.logoSite {
+  width: 15rem;
+  height: 15rem;
+}
+
+.titleSite {
+  font-size: 3rem;
+  font-family: "Cubano", sans-serif;
+  font-weight: 400;
+}
+
+.sliderImages {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(66, 64, 64);
+}
+
+.welcomeSlider {
+  vertical-align: middle;
+  width: 100%;
+  max-width: 70rem;
+}
+
+/**** NAVBAR ****/
+.navbar {
+  background-color: black;
+  font-family: "Cubano", sans-serif;
+  font-weight: 400;
+  opacity: 0.8;
+  font-size: 1.2rem;
+  padding: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+}
+
+.listInline {
+  height: 100%;
+  text-align: center;
+  list-style-type: none;
+}
+
+.listInline>li {
+  overflow: hidden;
+  display: inline-block;
+  height: 100%;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.listInline>li a {
+  text-decoration: none;
+  color: white;
+}
+
+/**** MAIN ****/
+main {
+  text-align: center;
+  font-family: "Sofia Pro", sans-serif;
+  color: white;
+}
+
+.containerContent {
+  background-color: rgb(66, 64, 64);
+  margin: 2rem;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  font-family: "Sofia Pro", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.contentSubtitle {
+  text-align: start;
+  font-family: "Cubano", sans-serif;
+  font-weight: 400;
+}
+
+.containerContent>div {
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.filters {
+  text-align: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.filters>select {
+  width: 15rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-family: "Roboto Mono", sans-serif;
+  color: white;
+  background-color: rgb(77, 77, 77);
+  border: none;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.productCard {
+  background-color: rgb(49, 48, 48);
+  margin: 2rem;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  color: white;
+  font-family: "Sofia Pro", sans-serif;
+  font-size: 1.2rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.productCard>img {
+  width: 100%;
+  max-width: 20rem;
+  min-width: 15rem;
+}
+
+.productCard h4,
+p {
+  margin: 0.5rem;
+}
+
+.productCard button {
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 1.5rem;
+}
+
+.btnAddcart {
+  background-color: black;
+  color: white;
+  font-family: "Sofia Pro", sans-serif;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.btnSubmit {
+  background-color: rgb(39, 38, 38);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  padding: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.container {
+  margin: 5rem;
+  background-color: rgb(66, 64, 64);
+  padding: 5rem;
+  border-radius: 0.5rem;
+}
+
+.formGroup {
+  width: 100%;
+  height: 100%;
+  padding: 2rem
+}
+
+.form {
+  margin-top: 1rem;
+}
+
+.form button {
+  margin-bottom: 1rem;
+}
+
+.camp label {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.camp input,
+textarea {
+  margin: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  width: 30%;
+  font-family: "Sofia Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.formLogin a,
+.formRegister a {
+  color: white;
+}
+
+.btnSubmitNews {
+  background-color: rgb(39, 38, 38);
+  color: white;
+  font-size: 0.8rem;
+  border: none;
+  padding: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.multimedia {
+  margin: 3rem 2rem 3rem 2rem;
+}
+
+.multimedia>h3 {
+  margin-left: 1rem;
+}
+
+iframe {
+  width: 60rem;
+  height: 40rem;
+  border-radius: 0.5rem;
+  margin: 3rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/**** FOOTER ****/
+.footerCopyright {
+  background-color: rgb(39, 38, 38);
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  font-family: "Sofia Pro", sans-serif;
+  font-size: 1rem;
+}
+
+.footerSocials {
+  text-align: center;
+  background-color: rgb(77, 77, 77);
+  padding: 2rem;
+  color: white;
+  font-family: "Sofia Pro", sans-serif;
+}
+
+.sectionSocials>div h3 {
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+
+.sectionAbout,
+.sectionAbout h3 {
+  padding: 0.5rem;
+}
+
+.footerSocials>section img {
+  width: 2rem;
+  height: 2rem;
+}
+
