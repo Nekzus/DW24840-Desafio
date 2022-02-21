@@ -30,6 +30,7 @@ header a {
 }
 
 .titleSite {
+  display: none;
   font-size: 3rem;
   font-family: "Cubano", sans-serif;
   font-weight: 400;
@@ -89,9 +90,13 @@ main {
   color: white;
 }
 
-.containerContent {
+.containerContent,
+.containerContentHome {
   display: grid;
   grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
   background-color: rgb(66, 64, 64);
   margin: 2rem;
   padding: 1rem;
@@ -102,9 +107,28 @@ main {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
+.containerContent {
+  grid-template-areas:
+    "subtitle"
+    "filters";
+}
+
+.containerContentHome {
+  grid-template-areas:
+    "subtitle"
+    "producto1"
+    "producto2"
+    "producto3"
+    "producto4";
+}
+
+.subtitle {
+  grid-area: subtitle;
+}
+
 .contentSubtitle {
   display: block;
-  text-align: start;
+  text-align: center;
   font-family: "Cubano", sans-serif;
   font-weight: 400;
 }
@@ -119,6 +143,7 @@ main {
   text-align: center;
   text-align: center;
   margin-top: 2rem;
+  grid-area: filters;
 }
 
 .filters>select {
@@ -177,7 +202,7 @@ p {
 }
 
 .btnSubmit {
-  background-color: rgb(39, 38, 38);
+  background-color: black;
   color: white;
   font-size: 1rem;
   border: none;
@@ -199,6 +224,7 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 2fr;
+  row-gap: 1rem;
   background-color: rgb(66, 64, 64);
   margin: 2rem;
   padding: 1rem;
@@ -212,10 +238,10 @@ p {
 .formGroup {
   background-color: rgb(49, 48, 48);
   border-radius: 1rem;
-  width: min(50rem ,100%);
+  width: min(40rem, 100%);
   height: 100%;
-  padding: 2rem;
-  margin: 0 auto;
+  padding: 1rem;
+  margin: 0 auto
 }
 
 .form {
@@ -233,10 +259,10 @@ p {
 
 .camp input,
 textarea {
+  width: 100%;
   margin: 0.5rem;
   padding: 0.4rem;
   border-radius: 0.5rem;
-  width: 30%;
   font-family: "Sofia Pro", sans-serif;
   font-size: 1rem;
   font-weight: bold;
@@ -259,19 +285,27 @@ textarea {
 }
 
 .multimedia {
-  margin: 3rem 2rem 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "subtitleMedia"
+    "media"
+    "subtitleMedia"
+    "media";
+
 }
 
 .multimedia>h3 {
-  margin-left: 1rem;
+  grid-area: subtitleMedia;
 }
 
 iframe {
-  width: 60rem;
-  height: 40rem;
+  width: 20rem;
+  height: 15rem;
   border-radius: 0.5rem;
   margin: 3rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  grid-area: media;
 }
 
 /**** FOOTER ****/
@@ -307,28 +341,73 @@ iframe {
   height: 2rem;
 }
 
-/* TODO: make the navbar responsive */
+/**** MEDIA QUERIES ****/
 @media only screen and (min-width: 760px) {
+  .titleSite {
+    display: block;
+  }
+
+  .contentSubtitle {
+    text-align: start;
+    margin-left: 2rem;
+  }
+
   .listInline {
     flex-direction: row;
     justify-content: space-evenly;
   }
-  .containerContent {
+
+  .containerContent,
+  .containerContentHome {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-}
+  }
+
+  .containerContent {
+    grid-template-areas:
+      "subtitle subtitle"
+      "filters filters";
+  }
+
+  .containerContentHome {
+    grid-template-areas:
+      "subtitle subtitle"
+      "product1 product2"
+      "product3 product4";
+  }
+
+  iframe {
+    width: 40rem;
+    height: 20rem;
+    border-radius: 0.5rem;
+    margin: 3rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  }
 }
 
 @media only screen and (min-width: 1115px) {
-  .containerContent {
+
+  .containerContent,
+  .containerContentHome {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    column-gap: 1rem;
-}
-}
+  }
 
-@media only screen and (min-width: 1140px) {}
+  .containerContent {
+    grid-template-areas:
+      "subtitle subtitle subtitle"
+      "filters filters filters";
+  }
 
-@media only screen and (min-width: 1400px) {}
+  .containerContentHome {
+    grid-template-areas:
+      "subtitle subtitle subtitle"
+      "product1 product2 product3"
+      "product4 product5 product6";
+  }
+
+  iframe {
+    width: 60rem;
+    height: 40rem;
+  }
+}
