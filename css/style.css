@@ -13,9 +13,12 @@ body {
 
 /**** HEADER ****/
 header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(39, 38, 38);
   padding: 10px;
-  text-align: center;
   color: white;
 }
 
@@ -94,9 +97,8 @@ main {
 .containerContentHome {
   display: grid;
   grid-template-columns: 1fr;
-  justify-content: center;
-  align-items: center;
-  column-gap: 1rem;
+  justify-self: center;
+  justify-self: center;
   background-color: rgb(66, 64, 64);
   margin: 2rem;
   padding: 1rem;
@@ -223,8 +225,10 @@ p {
 .containerContentForm {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr;
-  row-gap: 1rem;
+  grid-template-areas:
+    "subtitleForm"
+    "form";
+  gap: 1rem;
   background-color: rgb(66, 64, 64);
   margin: 2rem;
   padding: 1rem;
@@ -235,13 +239,19 @@ p {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
+.subtitleForm {
+  grid-area: subtitleForm;
+}
+
 .formGroup {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
   background-color: rgb(49, 48, 48);
   border-radius: 1rem;
   width: min(40rem, 100%);
   height: 100%;
   padding: 1rem;
-  margin: 0 auto
 }
 
 .form {
@@ -249,6 +259,7 @@ p {
 }
 
 .form button {
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -260,7 +271,6 @@ p {
 .camp input,
 textarea {
   width: 100%;
-  margin: 0.5rem;
   padding: 0.4rem;
   border-radius: 0.5rem;
   font-family: "Sofia Pro", sans-serif;
@@ -288,15 +298,26 @@ textarea {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "subtitleMedia"
-    "media"
-    "subtitleMedia"
-    "media";
-
+    "subtitleVideo"
+    "videoContainer"
+    "subtitleMap"
+    "mapContainer";
 }
 
-.multimedia>h3 {
-  grid-area: subtitleMedia;
+.subtitleVideo {
+  grid-area: subtitleVideo;
+}
+
+.videoContainer {
+  grid-area: videoContainer;
+}
+
+.subtitleMap {
+  grid-area: subtitleMap;
+}
+
+.mapContainer {
+  grid-area: mapContainer;
 }
 
 iframe {
@@ -341,10 +362,39 @@ iframe {
   height: 2rem;
 }
 
+.centerItemsGrid {
+  justify-self: center;
+  justify-self: center;
+}
+
 /**** MEDIA QUERIES ****/
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 887px) {
+  header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "logo title title .";
+  }
+
+  .logo {
+    grid-area: logo;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+  }
+
+  .title {
+    grid-area: title;
+  }
+
+  .logoSite {
+    width: 10rem;
+    height: 10rem;
+  }
+
   .titleSite {
-    display: block;
+    display: inline;
+    font-size: 2.5rem;
   }
 
   .contentSubtitle {
@@ -385,7 +435,11 @@ iframe {
   }
 }
 
-@media only screen and (min-width: 1115px) {
+@media only screen and (min-width: 1258px) {
+
+  .titleSite {
+    font-size: 3.5rem;
+  }
 
   .containerContent,
   .containerContentHome {
