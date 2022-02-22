@@ -97,6 +97,7 @@ main {
 .containerContentHome {
   display: grid;
   grid-template-columns: 100%;
+  justify-items: center;
   background-color: rgb(66, 64, 64);
   margin: 2rem;
   padding: 1rem;
@@ -114,12 +115,16 @@ main {
 }
 
 .containerContentHome {
+  height: 1600px;
+  grid-template-rows: 30px 350px 350px 350px 350px;
   grid-template-areas:
     "subtitle"
     "producto1"
     "producto2"
     "producto3"
     "producto4";
+  justify-content: space-evenly;
+  align-content: space-around;
 }
 
 .subtitle {
@@ -159,8 +164,12 @@ main {
 }
 
 .productCard {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;  
   background-color: rgb(49, 48, 48);
-  /* margin: 2rem; */
   padding: 2rem;
   text-align: center;
   border-radius: 0.5rem;
@@ -168,6 +177,7 @@ main {
   font-family: "Sofia Pro", sans-serif;
   font-size: 1.2rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  min-width: 300px;
 }
 
 .productCard>img {
@@ -366,7 +376,8 @@ iframe {
 }
 
 /**** MEDIA QUERIES ****/
-@media only screen and (min-width: 887px) {
+@media only screen and (max-width: 600px) {}
+@media only screen and (min-width: 600px) {
   header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
