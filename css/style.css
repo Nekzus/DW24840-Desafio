@@ -27,14 +27,7 @@ header a {
   text-decoration: none;
 }
 
-.logoSite {
-  width: 15rem;
-  height: 15rem;
-}
-
 .titleSite {
-  display: none;
-  font-size: 3rem;
   font-family: "Cubano", sans-serif;
   font-weight: 400;
 }
@@ -68,11 +61,10 @@ header a {
 
 .listInline {
   height: 100%;
+  display: flex;
   text-align: center;
   list-style-type: none;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   height: 100%;
   max-width: 120rem;
   margin-left: 3rem;
@@ -96,7 +88,6 @@ main {
 .containerContent,
 .containerContentHome {
   display: grid;
-  grid-template-columns: 100%;
   justify-items: center;
   align-items: center;
   background-color: rgb(66, 64, 64);
@@ -109,28 +100,6 @@ main {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
-.containerContent {
-  height: 9300px;
-  grid-template-areas:
-    "subtitle"
-    "filters";
-  justify-content: space-evenly;
-  align-content: space-around;
-}
-
-.containerContentHome {
-  height: 1600px;
-  grid-template-rows: 30px 350px 350px 350px 350px;
-  grid-template-areas:
-    "subtitle"
-    "producto1"
-    "producto2"
-    "producto3"
-    "producto4";
-  justify-content: space-evenly;
-  align-content: space-around;
-}
-
 .subtitle {
   grid-area: subtitle;
 }
@@ -140,12 +109,6 @@ main {
   text-align: center;
   font-family: "Cubano", sans-serif;
   font-weight: 400;
-}
-
-.containerContent>div {
-  display: inline-block;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
 }
 
 .filters {
@@ -170,10 +133,10 @@ main {
 .productCard {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 350px;
+  width: 95%;
+  height: 95%;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
   background-color: rgb(49, 48, 48);
   padding: 2rem;
   text-align: center;
@@ -182,12 +145,12 @@ main {
   font-family: "Sofia Pro", sans-serif;
   font-size: 1.2rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  width: min(300px, 100%);
 }
 
 .productCard>img {
   width: 100%;
-  max-width: 20rem;
-  min-width: 15rem;
+
 }
 
 .productCard h4,
@@ -197,7 +160,6 @@ p {
 
 .productCard button {
   text-transform: uppercase;
-  font-size: 1rem;
   padding: 0.5rem;
   margin: 1.5rem;
 }
@@ -206,7 +168,6 @@ p {
   background-color: black;
   color: white;
   font-family: "Sofia Pro", sans-serif;
-  font-size: 1.2rem;
   border: none;
   border-radius: 0.5rem;
   padding: 0.5em;
@@ -314,6 +275,8 @@ textarea {
     "videoContainer"
     "subtitleMap"
     "mapContainer";
+  justify-content: space-around;
+  align-content: space-around;
 }
 
 .subtitleVideo {
@@ -333,8 +296,6 @@ textarea {
 }
 
 iframe {
-  width: 20rem;
-  height: 15rem;
   border-radius: 0.5rem;
   margin: 3rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
@@ -376,26 +337,68 @@ iframe {
 
 .centerItemsGrid {
   justify-self: center;
-  justify-self: center;
+  align-self: center;
+}
+
+.justifysubtitles {
+  justify-self: start;
 }
 
 /**** MEDIA QUERIES ****/
 @media only screen and (max-width: 600px) {
+
   .containerContent,
-.containerContentHome {
-  display: grid;
-  grid-template-columns: 100%;
-  justify-items: center;
-  align-items: center;
-  background-color: rgb(66, 64, 64);
-  margin: 2rem;
-  padding: 1rem;
-  color: white;
-  font-family: "Sofia Pro", sans-serif;
-  font-size: 1.2rem;
-  border-radius: 0.5rem;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
-}
+  .containerContentHome {
+    grid-template-columns: 90%;
+    justify-content: center;
+    align-content: space-around;
+
+  }
+
+  .containerContent {
+    height: 9300px;
+    grid-template-areas:
+      "subtitle"
+      "filters";
+  }
+
+  .containerContentHome {
+    height: 1600px;
+    grid-template-rows: 30px 350px 350px 350px 350px;
+    grid-template-areas:
+      "subtitle"
+      "producto1"
+      "producto2"
+      "producto3"
+      "producto4";
+  }
+
+  .logoSite {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .titleSite {
+    display: none;
+  }
+
+  .listInline {
+    flex-direction: column;
+  }
+
+  .subtitle {
+    justify-self: center;
+    align-self: center;
+  }
+
+  .productCard button {
+    font-size: 0.6rem;
+  }
+
+  iframe {
+    width: 20rem;
+    height: 15rem;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -403,6 +406,30 @@ iframe {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "logo title title .";
+    justify-content: center;
+    align-content: center;
+  }
+
+  .containerContent,
+  .containerContentHome {
+    grid-template-columns: 40% 40%;
+    justify-content: space-evenly;
+    align-content: space-around;
+  }
+
+  .containerContent {
+    height: 90%;
+    grid-template-areas:
+      "subtitle subtitle"
+      "filters filters";
+  }
+
+  .containerContentHome {
+    height: 90%;
+    grid-template-areas:
+      "subtitle subtitle"
+      "product1 product2"
+      "product3 product4";
   }
 
   .logo {
@@ -415,7 +442,13 @@ iframe {
 
   .title {
     grid-area: title;
+    text-align: center;
   }
+
+  .title span {
+    display: block;
+  }
+
 
   .logoSite {
     width: 10rem;
@@ -437,45 +470,18 @@ iframe {
     justify-content: space-evenly;
   }
 
-  .containerContent,
-  .containerContentHome {
-    display: grid;
-    grid-template-columns: 40% 40%;
-  }
-
-  .containerContent {
-    grid-template-areas:
-      "subtitle subtitle"
-      "filters filters";
-  }
-
-  .containerContentHome {
-    grid-template-areas:
-      "subtitle subtitle"
-      "product1 product2"
-      "product3 product4";
+  .subtitle {
+    justify-self: normal;
+    align-self: center;
   }
 
   iframe {
     width: 40rem;
     height: 20rem;
-    border-radius: 0.5rem;
-    margin: 3rem;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
   }
 }
 
-@media only screen and (min-width: 1258px) {
-
-  .titleSite {
-    font-size: 3.5rem;
-  }
-
-  .containerContent,
-  .containerContentHome {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-  }
+@media only screen and (min-width: 992px) {
 
   .containerContent {
     grid-template-areas:
@@ -490,8 +496,47 @@ iframe {
       "product4 product5 product6";
   }
 
+  .containerContent,
+  .containerContentHome {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+  }
+
+  .titleSite {
+    font-size: 3.5rem;
+  }
+
+  .productCard button {
+    font-size: 1rem;
+  }
+
   iframe {
     width: 60rem;
     height: 40rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .containerContent {
+    grid-template-areas:
+      "subtitle subtitle subtitle subtitle"
+      "filters filters filters filters";
+  }
+
+  .containerContentHome {
+    grid-template-areas:
+      "subtitle subtitle subtitle subtitle"
+      "product1 product2 product3 product4";
+  }
+
+  .containerContent,
+  .containerContentHome {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+  }
+
+  iframe {
+    width: 65rem;
+    height: 45rem;
   }
 }
