@@ -98,6 +98,7 @@ main {
   display: grid;
   grid-template-columns: 100%;
   justify-items: center;
+  align-items: center;
   background-color: rgb(66, 64, 64);
   margin: 2rem;
   padding: 1rem;
@@ -109,9 +110,12 @@ main {
 }
 
 .containerContent {
+  height: 9300px;
   grid-template-areas:
     "subtitle"
     "filters";
+  justify-content: space-evenly;
+  align-content: space-around;
 }
 
 .containerContentHome {
@@ -166,7 +170,8 @@ main {
 .productCard {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 300px;
+  height: 350px;
   justify-content: space-between;
   align-items: center;  
   background-color: rgb(49, 48, 48);
@@ -177,7 +182,6 @@ main {
   font-family: "Sofia Pro", sans-serif;
   font-size: 1.2rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
-  min-width: 300px;
 }
 
 .productCard>img {
@@ -376,7 +380,24 @@ iframe {
 }
 
 /**** MEDIA QUERIES ****/
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+  .containerContent,
+.containerContentHome {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+  align-items: center;
+  background-color: rgb(66, 64, 64);
+  margin: 2rem;
+  padding: 1rem;
+  color: white;
+  font-family: "Sofia Pro", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+}
+
 @media only screen and (min-width: 600px) {
   header {
     display: grid;
